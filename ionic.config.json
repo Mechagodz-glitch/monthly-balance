@@ -1,0 +1,8 @@
+{
+  "name": "Monthly Balance",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "2f00ed7e"
+}
