@@ -1,3 +1,24 @@
 .button-remove {
     margin-left: 10px;
 }
+
+.mainTable {
+    max-height:35vh;
+  overflow-y:scroll;
+  overflow-x:hidden;
+}
+
+.btn {
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    // color: white;
+   /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    color: black;
+   }
+
+   .btn-1 {
+    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+  }

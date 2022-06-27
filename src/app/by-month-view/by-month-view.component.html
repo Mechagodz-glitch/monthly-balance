@@ -1,0 +1,84 @@
+<div style="overflow: scroll;">
+  <!-- <div>
+    <h3>Add Expenditure :</h3>
+  </div>
+  <div class="membersDiv">
+    <mat-form-field appearance="fill">
+      <mat-label>Select Month</mat-label>
+      <mat-select [formControl]="months">
+        <mat-select-trigger>
+          {{months.value}}
+        </mat-select-trigger>
+        <mat-option *ngFor="let month of monthsList" [value]="month">{{month}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Amount</mat-label>
+      <input matInput placeholder="Ex. 100" type="tel" [(ngModel)]="expenditureByMonth">
+    </mat-form-field>
+  </div> -->
+  
+  <div>
+    <h3>Select Month :</h3>
+  </div> 
+  <div class="monthsDiv">
+    <div class="btn-toolbar firstDiv" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary btn-2 mr-3" (click)="byMonthData(1)">January</button>
+      <button type="button" class="btn btn-secondary btn-2 mr-3" (click)="byMonthData(2)">February</button>
+      <button type="button" class="btn btn-secondary btn-2 mr-3" (click)="byMonthData(3)">March</button>
+    </div>
+    <div class="btn-toolbar secondDiv" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary btn-2 mr-3" (click)="byMonthData(4)">April</button>
+      <button type="button" class="btn btn-secondary btn-2 mr-3" (click)="byMonthData(5)">May</button>
+      <button type="button" class="btn btn-secondary btn-2 mr-3" (click)="byMonthData(6)">June</button>
+    </div>
+    <div class="btn-toolbar thirdDiv" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary btn-2 mr-3" (click)="byMonthData(7)">July</button>
+      <button type="button" class="btn btn-secondary btn-2 mr-3" (click)="byMonthData(8)">August</button>
+      <button type="button" class="btn btn-secondary btn-2 mr-3" (click)="byMonthData(9)">September</button>
+    </div>
+    <div class="btn-toolbar thirdDiv" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary btn-2 mr-3" (click)="byMonthData(10)">October</button>
+      <button type="button" class="btn btn-secondary btn-2 mr-3" (click)="byMonthData(11)">November</button>
+      <button type="button" class="btn btn-secondary btn-2 mr-3" (click)="byMonthData(12)">December</button>
+    </div>
+  </div>
+  <!-- <div>
+    <h4>Opening Balance : {{openingBalance}}</h4>
+    <h4>Closing Balance : {{closingBalance}}</h4>
+    <h4>Total Expenditure : {{expenditureByMonth}}</h4>
+  </div> -->
+  <div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;">
+  
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="month">
+        <th mat-header-cell *matHeaderCellDef> Month </th>
+        <td mat-cell *matCellDef="let element"> {{element.month}} </td>
+      </ng-container>
+    
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef> Amount </th>
+        <td mat-cell *matCellDef="let element"> {{element.amount}} 
+        </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  
+</div>

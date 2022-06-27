@@ -1,13 +1,16 @@
-.example-additional-selection {
-    opacity: 0.75;
-    font-size: 0.75em;
-  }
+.monthsDiv {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
+    width: 100%;
+}
 
-  table {
-    width: 70%;
-  }
+// button {
+//     margin: 5px;
+// }
 
-  .btn {
+.btn {
     text-align: center;
     transition: 0.5s;
     background-size: 200% auto;
@@ -15,6 +18,7 @@
    /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
+    color: black;
    }
 
   //  .btn:hover {
@@ -27,4 +31,10 @@
 
   .btn-2 {
     background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+  }
+
+  .mr-3 {
+    margin-right: 12px;
+    margin-bottom: 20px;
+    width: 110px;
   }

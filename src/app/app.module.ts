@@ -13,12 +13,16 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatSelectModule} from "@angular/material/select";
 import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatTableModule } from "@angular/material/table";
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatOptionModule } from '@angular/material/core';
+import { MatTableModule, MatTableDataSource } from '@angular/material/table';
+import { ByMonthViewComponent } from './by-month-view/by-month-view.component';
 
 @NgModule({
   declarations: [
     AppComponent, 
-    AddUserComponent
+    AddUserComponent,
+    ByMonthViewComponent
   ],
   imports: [
     BrowserModule,
@@ -31,9 +35,12 @@ import { MatTableModule } from "@angular/material/table";
     MatFormFieldModule,
     MatTableModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatAutocompleteModule,
+    MatOptionModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
+  exports: [ MatTableModule ]
 })
 export class AppModule {}

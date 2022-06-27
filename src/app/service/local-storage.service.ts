@@ -13,41 +13,39 @@ export class LocalStorageService {
 
   setItem(key: string, value: any | {}) {
     localStorage.setItem(key, value);
-    return window.alert('Added to Local Storage');
+    // return window.alert('Added to Local Storage');
+  }
+
+  removeItem(key: string) {
+    localStorage.removeItem(key);
+    // return window.alert('Item removed.')
+  }
+
+  hasItem(key: string) {
+    if (localStorage.getItem(key) == 'undefined') {
+      return false;
+    } else if (localStorage.getItem(key)) {
+      return true;
+    }
+  }
+
+  clearLocal() {
+    localStorage.clear();
   }
 
   getAllData(): any {
-    if(localStorage.length <= 0) {
-    return [];  
+    if (localStorage.length <= 0) {
+      return [];
     } else {
-      
-      // for(var i =0; i < localStorage.length; i++) {
-      //     keys[i] = localStorage["_keys"][i]
-      // }
-  
-      // for(var i =0; i < localStorage.length; i++) {
-      //     values.push(localStorage[keys[i]])
-      // }
-  
-      // return values;
-
-      // Object.keys(localStorage).forEach(data => 
-      //   {
-      //     let item = localStorage.getItem(data);
-      //     values.push(item);
-      //   });
-
       var values = [],
         keys = Object.keys(localStorage),
         i = keys.length;
 
-    while ( i-- ) {
-        values.push( localStorage.getItem(keys[i]) );
+      while (i--) {
+        values.push(localStorage.getItem(keys[i]));
+      }
+      console.log(values.toString())
+      return values;
     }
-
-
-    console.log(values.toString())
-    return values;
   }
-}
 }
